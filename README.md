@@ -8,11 +8,16 @@ A rest API application that provides email alert service for a user to get trigg
     pnpm install
 #### Step 2: Use docker compose up --build command to start the mysql and redis container.<br>
     docker compose up --build
-#### Step 3: Use pnpx prisma migrate dev --name init command to initialize the db.
+#### Step 3: Set up a .env file with the following data:
+    DATABASE_URL="mysql://root:db_root_password@127.0.0.1:3306/krypto_db"
+    TOKEN_SECRET="some_hard_secret"
+    EMAIL="dummy@email"
+    PASSWORD="abcd"
+#### Step 4: Use pnpx prisma migrate dev --name init command to initialize the db.
     pnpx prisma migrate dev --name init
-#### Step 3: Use the npm run build command to compile the typescript into javascript.<br>
+#### Step 5: Use the npm run build command to compile the typescript into javascript.<br>
     npm run build
-#### Step 4: Use the npm start command to run the server.<br>
+#### Step 6: Use the npm start command to run the server.<br>
     npm start
 
 
