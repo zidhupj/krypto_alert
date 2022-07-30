@@ -2,12 +2,18 @@
 
 A rest API application that provides email alert service for a user to get triggered when the price of a cryptocurrency goes above users' target price.
 
-# Steps to run the application
+# Steps to run the application (Requirement: pnpm package manager)
 
-Step 1: Clone the repo locally and use pnpm install to download all dependencies.<br>
-Step 2: Use docker compose up --build command to start the mysql and redis container.<br>
-Step 3: Use the npm run build command to compile the typescript into javascript.<br>
-Step 4: Use the npm start command to run the server.<br>
+#### Step 1: Clone the repo locally and use pnpm install to download all dependencies.<br>
+    pnpm install
+#### Step 2: Use docker compose up --build command to start the mysql and redis container.<br>
+    docker compose up --build
+#### Step 3: Use pnpx prisma migrate dev --name init command to initialize the db.
+    pnpx prisma migrate dev --name init
+#### Step 3: Use the npm run build command to compile the typescript into javascript.<br>
+    npm run build
+#### Step 4: Use the npm start command to run the server.<br>
+    npm start
 
 
 # API Docs
