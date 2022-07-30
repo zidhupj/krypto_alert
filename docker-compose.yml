@@ -1,0 +1,28 @@
+version: '3.9'
+services:
+  db:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_DATABASE: "krypto_db"
+      MYSQL_USER: 'krypto_user'
+      MYSQL_PASSWORD: 'krypto_password'
+      MYSQL_ROOT_PASSWORD: 'db_root_password'
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
+    volumes:
+      - ./data/db:/var/lib/mysql
+  redis:
+    image: "redis:alpine"
+    command: redis-server
+    ports:
+      - 6379:6379
+    volumes:
+      - redis-data:/data
+      - redis-conf:/usr/local/etc/redis/redis.conf
+
+volumes:
+  redis-data:
+  redis-conf:

@@ -1,0 +1,39 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  email    String  @id
+  password String
+  alerts   Alert[]
+}
+
+model Coin {
+  symbol String  @id
+  alerts Alert[]
+}
+
+model Alert {
+  id        Int    @id @default(autoincrement())
+  price     Float
+  status    Status
+  user      User   @relation(fields: [userEmail], references: [email])
+  userEmail String
+
+  coin       Coin   @relation(fields: [coinSymbol], references: [symbol])
+  coinSymbol String
+}
+
+enum Status {
+  created
+  deleted
+  triggered
+}
