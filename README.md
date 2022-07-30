@@ -56,3 +56,23 @@ Base Url: localhost:3000/
 ---------------- status: "created" || "deleted" || "triggered"<br>
 ---------------- offset: Pagination parameter<br>
 ---------------- limit: Pagination parameter<br>
+
+
+# Description
+
+The projet uses nodes js as the backend and uses express to set yp a server. Further it uses axios to fetch cropto price data and uses Jsonwentokens for authentication. Argon2 was used to hash passwords.<br>
+Redis was used in this project as a caching layer as well as message broker.<br>
+Mysql is the main database used to store information in this project and Prisma was the ORM used to query the database.<br>
+
+# DB Table structure
+There were three main tables:
+### User:
+    -fields: email, password
+### Coin:
+    -fields: symbol
+### Alert:
+    -fields: id, price, status
+#### User has many-to-one relation with Alert. A user can create many alerts.
+#### Coin has many-to-one relation with Alert. Many alerts can be registered upon a coin.
+
+
