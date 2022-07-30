@@ -15,10 +15,10 @@ A rest API application that provides email alert service for a user to get trigg
     PASSWORD="abcd"
 #### Step 4: Use pnpx prisma migrate dev --name init command to initialize the db.
     pnpx prisma migrate dev --name init
-#### Step 5: Use the npm run build command to compile the typescript into javascript.<br>
-    npm run build
-#### Step 6: Use the npm start command to run the server.<br>
-    npm start
+#### Step 5: Use the pnpm run build command to compile the typescript into javascript.<br>
+    pnpm run build
+#### Step 6: Use the pnpm start command to run the server.<br>
+    pnpm start
 
 
 # API Docs
